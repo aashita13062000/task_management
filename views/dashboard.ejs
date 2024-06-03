@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div>
+        <h1>Dashboard</h1>
+        <a href="/api/auth/logut">Logout</a>
+        </div>
+        <div>
+            <h2>Your Tasks</h2>
+            <ul>
+                <% tasks.forEach(task =>{%>
+                <li>
+                    <h3><%=task.title %></h3>
+                    <p>Description:<%= task.description %></p>
+                    <p>Priority:<%= task.priority %></p>
+                    <p>Status:<%= task.status %></p>
+                    <p>Due Date:<%= task.dueDate %></p>
+                    <p>Labels:<%= task.labels.join(', ') %></p>
+                    
+                </li>
+            <%}); %>
+            </ul>
+        </div>
+    </body>
+</html>
